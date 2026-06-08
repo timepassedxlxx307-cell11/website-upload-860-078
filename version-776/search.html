@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>影片搜索-口碑国产好剧</title>
+  <meta name="description" content="搜索国产电影大全、高清影片内容推荐、免费在线播放影片与热门剧集。">
+  <meta name="keywords" content="国产电影大全视频免费在线播放·高清影片内容推荐-口碑国产好剧,国产,视频,免费,在线观看,高清,影视大全,搜索,筛选">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="口碑国产好剧">
+      <span class="brand-mark">▶</span>
+      <span>口碑国产好剧</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <div class="nav-dropdown">
+        <a href="categories.html">分类</a>
+        <div class="dropdown-panel">
+              <a href="category-gaoqing-jingxuan.html">高清精选</a>
+              <a href="category-koubei-reying.html">口碑热映</a>
+              <a href="category-guochan-jiapian.html">国产佳片</a>
+              <a href="category-juji-liankan.html">剧集连看</a>
+              <a href="category-dianying-zhuanqu.html">电影专区</a>
+              <a href="category-xuanyi-juchang.html">悬念剧场</a>
+              <a href="category-dongzuo-maoxian.html">动作冒险</a>
+              <a href="category-qinggan-gushi.html">情感故事</a>
+        </div>
+      </div>
+      <a href="ranking.html">排行榜</a>
+      <a href="search.html" class="active">搜索</a>
+    </nav>
+    <form class="header-search" action="search.html" method="get">
+      <input type="search" name="q" placeholder="搜索影片、类型、地区" aria-label="搜索影片">
+      <button type="submit">搜索</button>
+    </form>
+    <button class="mobile-toggle" type="button" aria-label="打开菜单" data-mobile-toggle>☰</button>
+  </div>
+  <div class="mobile-panel" data-mobile-panel>
+    <form action="search.html" method="get">
+      <input type="search" name="q" placeholder="搜索影片、类型、地区" aria-label="移动搜索影片">
+      <button type="submit">搜索</button>
+    </form>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="categories.html">分类总览</a>
+      <a href="ranking.html">排行榜</a>
+      <a href="search.html">搜索</a>
+      <div class="mobile-category-list">
+          <a href="category-gaoqing-jingxuan.html">高清精选</a>
+          <a href="category-koubei-reying.html">口碑热映</a>
+          <a href="category-guochan-jiapian.html">国产佳片</a>
+          <a href="category-juji-liankan.html">剧集连看</a>
+          <a href="category-dianying-zhuanqu.html">电影专区</a>
+          <a href="category-xuanyi-juchang.html">悬念剧场</a>
+          <a href="category-dongzuo-maoxian.html">动作冒险</a>
+          <a href="category-qinggan-gushi.html">情感故事</a>
+          <a href="category-donghua-xinfan.html">动画新番</a>
+          <a href="category-haiwai-jingxuan.html">海外精选</a>
+          <a href="category-jiating-juqing.html">家庭剧情</a>
+          <a href="category-niandu-tuijian.html">年度推荐</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="section-kicker">快速检索</span>
+    <h1>影片搜索</h1>
+    <p>输入影片名称、地区、类型、年份或标签，快速定位想看的高清影片内容。</p>
+  </div>
+</section>
+
+<section class="section-block" data-search-page>
+  <div class="container">
+    <div class="search-panel">
+      <form class="search-box" id="searchForm">
+        <input id="searchInput" type="search" placeholder="搜索影片、类型、地区、年份" aria-label="搜索关键词">
+        <button type="submit">搜索</button>
+      </form>
+      <div class="search-filter">
+        <select id="regionFilter" aria-label="地区筛选">
+          <option value="">全部地区</option>
+          <option value="中国">中国</option>
+          <option value="美国">美国</option>
+          <option value="日本">日本</option>
+          <option value="韩国">韩国</option>
+          <option value="英国">英国</option>
+          <option value="法国">法国</option>
+          <option value="香港">香港</option>
+          <option value="台湾">台湾</option>
+        </select>
+        <select id="typeFilter" aria-label="类型筛选">
+          <option value="">全部类型</option>
+          <option value="电影">电影</option>
+          <option value="电视剧">电视剧</option>
+          <option value="剧集">剧集</option>
+          <option value="动画">动画</option>
+          <option value="综艺">综艺</option>
+          <option value="纪录片">纪录片</option>
+        </select>
+      </div>
+    </div>
+    <div class="section-head" style="margin-top: 32px;">
+      <div>
+        <span class="section-kicker">搜索结果</span>
+        <h2>匹配影片</h2>
+      </div>
+    </div>
+    <div class="movie-grid" id="searchResults"></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <span class="brand-mark">▶</span>
+        <span>口碑国产好剧</span>
+      </div>
+      <p>围绕国产电影大全整理视频资源，提供免费在线播放、高清播放服务，可按高清影片内容推荐与片库快速定位，更新及时。</p>
+    </div>
+    <div>
+      <h3>精选分类</h3>
+      <ul>
+          <li><a href="category-gaoqing-jingxuan.html">高清精选</a></li>
+          <li><a href="category-koubei-reying.html">口碑热映</a></li>
+          <li><a href="category-guochan-jiapian.html">国产佳片</a></li>
+          <li><a href="category-juji-liankan.html">剧集连看</a></li>
+          <li><a href="category-dianying-zhuanqu.html">电影专区</a></li>
+          <li><a href="category-xuanyi-juchang.html">悬念剧场</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>快速入口</h3>
+      <ul>
+        <li><a href="index.html">首页推荐</a></li>
+        <li><a href="categories.html">分类片库</a></li>
+        <li><a href="ranking.html">口碑榜单</a></li>
+        <li><a href="search.html">影片搜索</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 口碑国产好剧</div>
+</footer>
+<script src="assets/search-data.js"></script>
+<script src="assets/site.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?95df08bc498ee0333203841fd6fee1eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
